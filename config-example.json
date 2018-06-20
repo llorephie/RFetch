@@ -1,0 +1,34 @@
+{   
+    "application": {
+        "LogFile": "RFetch.log",
+        "OutFile": "RFetch.out.json"
+    },
+    "servers": {
+        "ReferenceSSH_Full": {
+            "HostType": "ssh2",
+            "DestHost": "example.com",
+            "DestPort": 22,
+            "HostUser": "root",
+            "HostPass": "Very$trongPassword",
+            "SSHPrivateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAp0tNlzuSy+f7CIOxVnCAvmAP51RSrvS3IEYOqAytYA/eK0D2\nYCUFi5uTPk3NwnaacXNocqaMOMC/oDDiL2Jhn5EWq77Ng0Bwdj1p95FtjrSwmG0C\nVX8aQh9qecoPUIjOTYwRo8fL2HsIuaIR5b2ItvugStrO5Ko4GKL2VX+QWg7k4bqz\nZmgKzCTQKa5rYn9VC5PElDE0uKifyJgDA//1eTwtSdmMETyt11OBlgvU9qiRX3Gn\nfAxNS9lCwHI5UbuXrFfRBNR++iTjdeg8aV4QM8k6adoioRAmp1FYxXGv14STWmZi\nrJEfs+QEZBIWV0ug0BMDCLpgW6sX93HVapvPiQIDAQABAoIBADsf+Aos+dKq6CO4\nN2KvXDDsTnKZcKd4wYfceq2V3WiH8yMiUHDmZLFUiJOKd9/0ftz9xrpOdlxQcukw\nnZ/Vi18TrgmA460xhw2i4uKmOSwoXAli7WI+C4+2/rCQYx05XIA3srxJjpex1AGX\nb+/cLodNIveRoXFbX3wFjD3nWaMZ8hZzVxLjFpSTpRLotNniHEMDvO+WD/Vve4O6\ncNxt9jN7M4f8sfxBh5BOwm7ziKLxN58r3OKzmj835xb4y9NDIY8DQkuSVzljJEU7\nSYvHx7hnoeoBPJNYDcHDAauG9HaSYzwWoNt+ZXcgNb/PHzq/wbbfObOJOVTcdY0w\n/niv0+kCgYEA1obPTO69GgY7H95olouwQx1kitsvDDqfmYNhd2JuyMDDPl1LKCpE\n6Crm46iJ6d6j6T9EO4qVbxXyRCD7k+y0N9vUT0qDHlioaYlKrb581ByRos1Mws/9\nFFvIlEyKJg7HtL1ffCtloATQpt60/eOXJRT0OXGq3F9iEswhyYhISaMCgYEAx6Lm\ned+PbOtg7YTs7VM6buoYUzeo+AVvhANoDfQe7Z3R9jSjgECtDwUx8QvhX36Q0cR9\nqa0+DBeBjPLNHNmweELgd3Y6F4gxocaZdZD64dr3MkNpViDSsGSudouv2vtOFKIX\nLnSfV2Q1ghUrly6uiCtQ08WrkYj3AWSgF81jrOMCgYBzKd+zXx5pEBtBWnYvC0JO\nZUMKP+wb1oTDNoJmQpNSdhjaK98i6r4fHJjiciHHSNwZZPtOM3FRNyjdZg9oM9Pz\ngLGS9184NUQDk85hQzdj7wpHqYqhsmIcQcGFyykGkTyoTFksIWfm5W7Vhg0HltwW\n7g7Fn72nnBTcHnWs6NpVnQKBgQCXbLqBCs/RgCA/SSolQZH6+1mEFZ32srjJW4Qb\nwWWMOr89juPNrkEWOYyOF8LVGj1ivzXJ8/wyU8oSTUDDd2NhdOip9GVP4CA1Y1yX\nTmbd1abW20cU60SkQ1oJ1R6IbUHmaKRIunD6aqojh0dPHzuHUcO3PiJK+6bPybGd\nHE9UnQKBgEJ6H5OB02Ny4hjwr4US3FKpt+JtHL+WhF2ablrD5eqHGLsoeR9WulqH\nsfsFiEyfkagmk9oo03nUKiIyv1Qt1uAWdA0cNviMh7aDA6PThKmh0HqV5+Omz6kI\npqyNdvuqrZj9ZrjGpsL9onRFPzIR6hyMXjDsQDhhdKCoFM05efTM\n-----END RSA PRIVATE KEY-----\n",
+            "ExecCommands": [
+                "free -mh",
+                "uptime",
+                "echo $HOSTNAME"
+            ]
+        },
+        "ReferenceWMI_Full": {
+            "HostType": "wmi",
+            "DestHost": "example.com",
+            "DestPort": 24158,
+            "DestNamespace": "root\\CIMV2",
+            "HostUser": "WORKGROUP\\Administrator",
+            "HostPass": "Very$trongPassword",
+            "ExecCommands": [
+                "SELECT TotalVirtualMemorySize FROM Win32_OperatingSystem",
+                "SELECT SystemUpTime FROM Win32_PerfFormattedData_PerfOS_System",
+                "SELECT * FROM Win32_ComputerSystem"
+            ]
+        }
+    }
+}
